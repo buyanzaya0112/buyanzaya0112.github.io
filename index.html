@@ -1,104 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Buyanzaya | Portfolio</title>
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #1f4037, #99f2c8);
+    }
+
+    body {
+      background: #0f172a;
       color: white;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      width: 100%;
+      background: #020617;
+      padding: 15px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav h2 {
+      color: #38bdf8;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #38bdf8;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #020617, #0f172a);
       text-align: center;
     }
 
-    header {
-      padding: 60px 20px;
-    }
-
-    h1 {
-      font-size: 48px;
+    .hero h1 {
+      font-size: 60px;
       margin-bottom: 10px;
     }
 
-    h2 {
-      font-weight: normal;
+    .hero span {
+      color: #38bdf8;
     }
 
-    section {
-      background: white;
-      color: #333;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 40px;
-      border-radius: 10px;
-    }
-
-    .skills span {
-      display: inline-block;
-      background: #1f4037;
-      color: white;
-      padding: 8px 15px;
-      margin: 5px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
-
-    footer {
-      padding: 20px;
-      font-size: 14px;
+    .hero p {
+      font-size: 20px;
       opacity: 0.8;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #38bdf8;
+      color: black;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 50px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 36px;
+      color: #38bdf8;
+    }
+
+    /* About */
+    .about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* Skills */
+    .skills-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: scale(1.05);
+      background: #020617dd;
+    }
+
+    /* Projects */
+    .projects-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: #020617;
+      padding: 25px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      text-align: center;
+      padding: 20px;
+      opacity: 0.7;
+    }
+
+    /* Mobile */
+    @media(max-width:768px){
+      nav {
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Buyanzaya</h1>
-  <h2>Software Engineering Student</h2>
-  <p>Building Web & Mobile Applications</p>
-</header>
+<!-- Navbar -->
+<nav>
+  <h2>Buyanzaya</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-<section>
-  <h3>About Me</h3>
+<!-- Hero -->
+<div class="hero" id="home">
+  <h1>Hello, I'm <span>Buyanzaya</span></h1>
+  <p>Software Engineering Student</p>
+  <a href="#projects" class="btn">View My Work</a>
+</div>
+
+<!-- About -->
+<section class="about" id="about">
+  <h2>About Me</h2>
   <p>
-    I am a software engineering student interested in web development,
-    mobile apps, and system design.
+    I am a software engineering student passionate about web development,
+    mobile apps, and building real-world systems.
   </p>
 </section>
 
-<section>
-  <h3>Skills</h3>
-  <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>React</span>
-    <span>Node.js</span>
-    <span>Python</span>
-    <span>Git</span>
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+
+  <div class="skills-box">
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">Python</div>
+    <div class="skill">Git</div>
+    <div class="skill">MySQL</div>
   </div>
 </section>
 
-<section>
-  <h3>Projects</h3>
-  <ul style="list-style:none; padding:0;">
-    <li>📈 Stock Risk Analysis System</li>
-    <li>🗳️ E-Election Platform</li>
-    <li>🌐 Personal Portfolio Website</li>
-  </ul>
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects-box">
+    <div class="project">
+      <h3>📈 Stock Risk System</h3>
+      <p>Stock analysis and risk prediction platform.</p>
+    </div>
+
+    <div class="project">
+      <h3>🗳️ E-Election System</h3>
+      <p>Online voting and election management system.</p>
+    </div>
+
+    <div class="project">
+      <h3>🌐 Portfolio Website</h3>
+      <p>Personal portfolio built with HTML & CSS.</p>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h3>Contact</h3>
+<!-- Contact -->
+<section class="contact" id="contact">
+  <h2>Contact</h2>
+
   <p>Email: your@email.com</p>
   <p>GitHub: github.com/buyanzaya0112</p>
 </section>
 
+<!-- Footer -->
 <footer>
-  © 2026 Buyanzaya. All rights reserved.
+  © 2026 Buyanzaya | All Rights Reserved
 </footer>
 
 </body>
